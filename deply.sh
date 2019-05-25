@@ -1,0 +1,1 @@
+mvn clean && mvn install && cp ./target/Hello.war ~/Documents/project/tomcat/webapps

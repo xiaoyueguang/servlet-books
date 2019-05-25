@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>列表页面</title>
+</head>
+<body>
+  <h1>书本列表</h1>
+  <p>共${total}本书</p>
+  <a href="/Hello/add">新增</a>
+  <ul>
+    <#list books as book>
+      <li><a href="/Hello/book?id=${book.id}">${book.id} - ${book.name}</a></li>
+    </#list>
+  </ul>
+
+  <a href="/Hello/books">首页</a>
+  <#if 0 lt prev>
+    <a href="/Hello/books?page=${prev}">上一页</a>
+  </#if>
+  <a>第${page}/${end}页</a>
+  <#if page lt end>
+    <a href="/Hello/books?page=${next}">下一页</a>
+  </#if>
+  <a href="/Hello/books?page=${end}">最后页</a>
+</body>
+</html>
